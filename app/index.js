@@ -4,14 +4,14 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 function App() {
-	return (
-		<React.Fragment>
-			<CssBaseline />
-			<Button variant="contained" color="primary">
-				Olá Mundo
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Button variant="contained" color="primary">
+        Olá Mundo
     	</Button>
-		</React.Fragment>
-	);
+    </React.Fragment>
+  );
 }
 
 ReactDOM.render(<App />, document.querySelector('#main'));
