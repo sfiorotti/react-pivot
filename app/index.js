@@ -1,17 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import React, { Fragment } from 'react'
+import ReactDOM from 'react-dom'
 
-function App() {
-  return (
-    <React.Fragment>
-      <CssBaseline />
-      <Button variant="contained" color="primary">
-        Olá Mundo
-    	</Button>
-    </React.Fragment>
-  );
-}
+import Routes from './router'
 
-ReactDOM.render(<App />, document.querySelector('#main'));
+ReactDOM.render(<Routes />, document.querySelector('#main'))
