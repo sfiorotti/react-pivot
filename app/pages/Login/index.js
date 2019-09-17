@@ -1,7 +1,7 @@
-import React, { Component, Suspense } from 'react'
+import React, { Component, Suspense, lazy } from 'react'
 import { Container, TextField, Typography } from '@material-ui/core'
 
-const Header = React.lazy(() => import('../../components/Header'));
+const Header = lazy(() => import('../../components/Header'))
 
 export default class Login extends Component {
   render() {
@@ -11,7 +11,7 @@ export default class Login extends Component {
           <Header labelHeader="Login" />
         </Suspense>
         <Container maxWidth="sm">
-          <Typography component="div" style={{ height: '100vh', margin: '10px' }}>
+          <Typography component="div" style={{ margin: '10px' }}>
             <form noValidate autoComplete="off">
               <TextField
                 id="outlined-name"

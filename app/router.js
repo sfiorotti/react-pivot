@@ -1,8 +1,7 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-const Login = React.lazy(() => import('./pages/Login'));
-// import { Login } from './pages/Login'
+const Login = lazy(() => import('./pages/Login'))
 
 export default function Routes() {
   return (
