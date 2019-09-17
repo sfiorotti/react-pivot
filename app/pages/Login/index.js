@@ -1,6 +1,8 @@
 import React, { Component, Suspense, lazy } from 'react'
 import { Container, TextField, Typography } from '@material-ui/core'
 
+const Button = lazy(() => import('../../components/Button'))
+const ErrorBoundary = lazy(() => import('../../components/ErrorBoundary'))
 const Header = lazy(() => import('../../components/Header'))
 
 export default class Login extends Component {
@@ -8,27 +10,26 @@ export default class Login extends Component {
     return (
       <>
         <Suspense fallback={<div>Loading...</div>}>
-          <Header labelHeader="Login" />
+          <Header label="Login" />
         </Suspense>
         <Container maxWidth="sm">
           <Typography component="div" style={{ margin: '10px' }}>
-            <form noValidate autoComplete="off">
-              <TextField
-                id="outlined-name"
-                label="Email"
-                margin="normal"
-                variant="outlined"
-                fullWidth
-              />
-              <TextField
-                id="outlined-name"
-                label="Password"
-                type="password"
-                margin="normal"
-                variant="outlined"
-                fullWidth
-              />
-            </form>
+            <TextField
+              id="email"
+              label="Email"
+              margin="normal"
+              fullWidth
+            />
+            <TextField
+              id="password"
+              label="Password"
+              type="password"
+              margin="normal"
+              fullWidth
+            />
+            <ErrorBoundary>
+              <Button label="Login"></Button>
+            </ErrorBoundary>
           </Typography>
         </Container>
       </>
