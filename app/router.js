@@ -1,12 +1,17 @@
-import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import React, { Suspense } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { Login } from './pages/Login'
+const Login = React.lazy(() => import('./pages/Login'));
+// import { Login } from './pages/Login'
 
 export default function Routes() {
   return (
     <Router>
-      <Route path="/" component={Login} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          <Route path="/" component={Login} />
+        </Switch>
+      </Suspense>
     </Router>
   )
 }

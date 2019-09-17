@@ -1,15 +1,35 @@
-import React, { Component } from 'react'
-import { Container, Typography } from '@material-ui/core'
+import React, { Component, Suspense } from 'react'
+import { Container, TextField, Typography } from '@material-ui/core'
 
-import Header from '../../components/Header'
+const Header = React.lazy(() => import('../../components/Header'));
 
-export class Login extends Component {
+export default class Login extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Header labelHeader="Login" />
+        </Suspense>
         <Container maxWidth="sm">
-          <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} />
+          <Typography component="div" style={{ height: '100vh', margin: '10px' }}>
+            <form noValidate autoComplete="off">
+              <TextField
+                id="outlined-name"
+                label="Email"
+                margin="normal"
+                variant="outlined"
+                fullWidth
+              />
+              <TextField
+                id="outlined-name"
+                label="Password"
+                type="password"
+                margin="normal"
+                variant="outlined"
+                fullWidth
+              />
+            </form>
+          </Typography>
         </Container>
       </>
     )
