@@ -38,7 +38,7 @@ export default class Login extends Component {
               fullWidth
             />
             <ErrorBoundary>
-              <ButtonMaterial label="Login" onClick={this.clickLogin} />
+              <ButtonMaterial onClick={this.clickLogin} render={() => <>{'Login'}</>} />
             </ErrorBoundary>
           </Typography>
         </Container>
