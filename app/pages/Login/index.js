@@ -1,11 +1,21 @@
 import React, { Component, Suspense, lazy } from 'react'
 import { Container, TextField, Typography } from '@material-ui/core'
 
-const Button = lazy(() => import('../../components/Button'))
-const ErrorBoundary = lazy(() => import('../../components/ErrorBoundary'))
+const ButtonMaterial = lazy(() => import('../../components/Button'))
+const ErrorComponent = lazy(() => import('../../components/ErrorBoundary'))
 const Header = lazy(() => import('../../components/Header'))
 
 export default class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.clickLogin = this.clickLogin.bind(this);
+  }
+
+  clickLogin(e) {
+    e.preventDefault()
+    throw new Error()
+  }
+
   render() {
     return (
       <>
@@ -27,9 +37,9 @@ export default class Login extends Component {
               margin="normal"
               fullWidth
             />
-            <ErrorBoundary>
-              <Button label="Login"></Button>
-            </ErrorBoundary>
+            <ErrorComponent>
+              <ButtonMaterial label="Login" onClick={this.clickLogin} />
+            </ErrorComponent>
           </Typography>
         </Container>
       </>

@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Button } from '@material-ui/core'
 
-export default function ({ label }) {
-  return (
-    <Button variant="contained" color="primary" size="large" style={{marginTop: 10}}>
-      {label}
-    </Button>
-  )
+export default class ButtonMaterial extends Component {
+  render() {
+    return (
+      <Button variant="contained" color="primary" size="large" {...this.props}>
+        {this.props.label}
+      </Button>
+    )
+  }
 }
