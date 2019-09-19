@@ -2,7 +2,7 @@ import React, { Component, Suspense, lazy } from 'react'
 import { Container, TextField, Typography } from '@material-ui/core'
 
 const ButtonMaterial = lazy(() => import('../../components/Button'))
-const ErrorComponent = lazy(() => import('../../components/ErrorBoundary'))
+const ErrorBoundary = lazy(() => import('../../components/ErrorBoundary'))
 const Header = lazy(() => import('../../components/Header'))
 
 export default class Login extends Component {
@@ -37,9 +37,9 @@ export default class Login extends Component {
               margin="normal"
               fullWidth
             />
-            <ErrorComponent>
+            <ErrorBoundary>
               <ButtonMaterial label="Login" onClick={this.clickLogin} />
-            </ErrorComponent>
+            </ErrorBoundary>
           </Typography>
         </Container>
       </>

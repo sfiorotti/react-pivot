@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class ErrorComponent extends Component {
+export default class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false, error: null, info: null };
@@ -14,12 +14,11 @@ export default class ErrorComponent extends Component {
     this.setState({
       hasError: true,
       error,
-      info
+      info,
     })
   }
 
   render() {
-    console.log(this.state)
     if (this.state.hasError) {
       return <div>Error...</div>
     }
