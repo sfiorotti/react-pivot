@@ -1,7 +1,7 @@
 {
-  "name": "finkraft-pivot",
+  "name": "react-pivot",
   "version": "1.0.0",
-  "description": "Finkraft Pivot",
+  "description": "React Pivot",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",

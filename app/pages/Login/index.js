@@ -1,4 +1,4 @@
-import React, { Component, Suspense, lazy } from 'react'
+import React, { Component, Suspense, lazy, Fragment } from 'react'
 import { Container, TextField, Typography } from '@material-ui/core'
 
 import { ButtonOutlined, ButtonContained } from '../../components/Button'
@@ -20,7 +20,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <>
+      <Fragment>
         <Suspense fallback={<div>Loading...</div>}>
           <Header label="Login" />
         </Suspense>
@@ -44,7 +44,7 @@ export default class Login extends Component {
             </ErrorBoundary>
           </Typography>
         </Container>
-      </>
+      </Fragment>
     )
   }
 }

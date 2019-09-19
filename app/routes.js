@@ -7,7 +7,7 @@ const ErrorBoundary = lazy(() => import('./components/ErrorBoundary'))
 export default function Routes() {
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading Routes...</div>}>
         <Switch>
           <ErrorBoundary>
             <Route path="/" component={Login} />
