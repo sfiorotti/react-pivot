@@ -9,6 +9,7 @@ export default function Routes() {
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
           <Route path="/" component={Login} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </Suspense>
     </Router>
